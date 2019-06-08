@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PlayerApp
 {
-    class Player
+   public class Player
     {
         private int _id;
         private string _name;
