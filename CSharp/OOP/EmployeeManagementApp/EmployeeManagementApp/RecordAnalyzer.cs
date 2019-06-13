@@ -6,14 +6,19 @@ using System.Collections;
 
 namespace EmployeeManagementApp
 {
-    class RecordAnalyzer
+   public  class RecordAnalyzer
     {
-        public Employee MaximumSalariedEmployee
-            (Dictionary<Employee, Employee> employeedictionary)
+        DataParser _dataparser;
+
+        public RecordAnalyzer(DataParser dataparser)
+        {
+            _dataparser = dataparser;
+        }
+        public Employee MaximumSalariedEmployee()
         {
             int max = 0;
             Employee maxemployee = null;
-            foreach (Employee employee in employeedictionary.Values)
+            foreach (Employee employee in _dataparser.EmployeeDictionary.Values)
             {
                 if (max < Convert.ToInt32(employee.EmployeeSalary))
                 {
@@ -25,14 +30,14 @@ namespace EmployeeManagementApp
             return maxemployee;
 
         }
-        public Dictionary<string,int> DepartmentWiseCount
-             (Dictionary<Employee, Employee> employeedictionary)
+        public Dictionary<string,int> DepartmentWiseCount()
+             
         {
             
             Dictionary<string, int> count = new Dictionary<string, int>(); ;
            
        
-            foreach (Employee employee in employeedictionary.Values)
+            foreach (Employee employee in _dataparser.EmployeeDictionary.Values)
             {
                 if(count.ContainsKey(employee.DepartmentNumber))
                 {
@@ -53,13 +58,12 @@ namespace EmployeeManagementApp
 
         }
 
-        public Dictionary<string,int> DesignationWiseCount
-        (Dictionary<Employee, Employee> employeedictionary)
+        public Dictionary<string,int> DesignationWiseCount()
         {
             Dictionary<string, int> count = new Dictionary<string, int>(); ;
 
 
-            foreach (Employee employee in employeedictionary.Values)
+            foreach (Employee employee in _dataparser.EmployeeDictionary.Values)
             {
                 if (count.ContainsKey(employee.EmployeeDesignation))
                 {

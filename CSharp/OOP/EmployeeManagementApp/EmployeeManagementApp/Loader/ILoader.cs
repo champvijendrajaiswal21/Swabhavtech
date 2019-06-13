@@ -5,11 +5,9 @@ using System.Text;
 
 namespace EmployeeManagementApp.Loader
 {
-    interface ILoader 
+   public interface ILoader 
     {
-       
-       
-
+       void Load(string path);
         
     }
 }

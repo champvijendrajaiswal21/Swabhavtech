@@ -87,6 +87,13 @@ namespace EmployeeManagementApp
                 return _departmentnumber;
             }
         }
+        public string Name
+        {
+            get
+            {
+                return _employename;
+            }
+        }
         public override bool Equals(object obj)
         {
             Employee item = (Employee)obj;
