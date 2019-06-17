@@ -60,7 +60,7 @@ namespace InventoryApp
                     return "Any";
 
                 case Builder.COLLINGS:
-                    return "collings";
+                    return "Collings";
                 case Builder.FENDER:
                     return "Fender";
                 case Builder.GIBSON:
@@ -68,16 +68,36 @@ namespace InventoryApp
                 case Builder.MARTIN:
                     return "Martin";
                 case Builder.OLSON:
-                    return "olson";
+                    return "Olson";
                 case Builder.PRS:
                     return "Prs";
                 case Builder.RYAN:
-                    return "ryan";
+                    return "Ryan";
+               default:
+                    return "wrong choice";
 
 
+            }
+        }
+             public string InstrumentTypeToString(InstrumentType i)
+        { 
+            switch (i)
+            {
 
+                case InstrumentType.BANJO:
+                    return "Banjo";
 
+                case InstrumentType.BASS:
+                    return "Bass";
 
+                case InstrumentType.DOBRA:
+                    return "Dobra";
+                case InstrumentType.FIDDLE:
+                    return "Fiddle";
+                case InstrumentType.GUITAR:
+                    return "guitar";
+                case InstrumentType.MANDOLIN:
+                    return "Mandolin";
 
                 default:
                     return "wrong choice";

@@ -10,34 +10,77 @@ namespace InventoryApp
     {
         static void Main(string[] args)
         {
-            Inventory inventory = new Inventory();
-            InitializeInventor(inventory);
-            GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER,"Stratocastor",Type.ELECTRIC,Wood.ALDER,Wood.ALDER);
-            ArrayList matchingGuitar = inventory.search(whatErinLikes);
-            EnumToString es = new EnumToString();
-            if(matchingGuitar.Count>=0)
+            try
             {
-                Console.WriteLine("enter in if");
-                foreach(Guitar g in matchingGuitar)
-                {
-                   
-                    GuitarSpec specs = g.Spec;
-                    Console.WriteLine(  "we have a " +es.BuilderToString(specs.Builder)+" "+specs.Model+" "+ es.TypeToString(specs.Type)+"guitar:\n"+es.WoodToString(specs.Backwood)+"back and sides,\n  "+es.WoodToString(specs.Topwood)+"top.\n you can have it for only $"+g.Price+"!\n ----");
+                EnumToString convertToString = new EnumToString();
+                Inventory inventory = new Inventory();
+                InitializeInventory(inventory);
 
+                Dictionary<string, object> properties = new Dictionary<string, object>();
+                properties.Add("instrumentType1", InstrumentType.BASS);
+                properties.Add("builder1", Builder.COLLINGS);
+                properties.Add("model1", "CJ");
+                properties.Add("numString1", 6);
+                properties.Add("topWood1", Wood.INDIAN_ROSEWOOD);
+                properties.Add("backWood1", Wood.SITKA);
+
+                InstrumentSpec clientSpec = new InstrumentSpec(properties);
+                List<Instrument> matchingInstrument = inventory.Search(clientSpec);
+
+                if (matchingInstrument.Count > 0)
+                {
+                    Console.WriteLine("you might like these Instrument:");
+
+                    foreach (Instrument instrument in matchingInstrument)
+                    {
+
+                        InstrumentSpec spec = instrument.Spec;
+
+                        Console.WriteLine("We have a " + spec.GetProperty("instrumentType") + "  with follwing Properties ");
+                        foreach (var j in spec.Properties.Keys)
+                        {
+                            string propertyName = Convert.ToString(j);
+                         
+                            Console.WriteLine(" " + propertyName + " :" + spec.GetProperty(propertyName));
+                        }
+                        Console.WriteLine("You can have this " + spec.GetProperty("instrumentType") + " $" + instrument.Price + "\n----");
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Sorry,we have nothing fo you");
                 }
             }
-            else
+            catch(Exception e)
             {
-                Console.WriteLine("sorry , Erin , we have nothing for you");
+                Console.WriteLine(e.Message);
             }
-               
-                 
+
         }
-        private static void InitializeInventor(Inventory inventory)
+
+        public static void InitializeInventory(Inventory inventory)
         {
-            inventory.AddGuitar("V95693", 1499.95, new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER));
-            inventory.AddGuitar("V9512", 1549.95, new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER));
+            Dictionary<string, object> properties = new Dictionary<string, object>();
+            properties.Add("instrumentType", InstrumentType.GUITAR);
+            properties.Add("builder", Builder.COLLINGS);
+            properties.Add("model", "CJ");
+            properties.Add("numString", 6);
+            properties.Add("topWood", Wood.INDIAN_ROSEWOOD);
+            properties.Add("backWood", Wood.SITKA);
+            inventory.AddInstrument("1234", 250, new InstrumentSpec(properties));
+
+
+            properties.Add("instrumentType1", InstrumentType.BASS);
+            properties.Add("builder1", Builder.COLLINGS);
+            properties.Add("model1", "CJ");
+            properties.Add("numString1", 6);
+            properties.Add("topWood1", Wood.INDIAN_ROSEWOOD);
+            properties.Add("backWood1", Wood.SITKA);
+        
+            inventory.AddInstrument("123554", 650, new InstrumentSpec(properties));
 
         }
     }
 }
+

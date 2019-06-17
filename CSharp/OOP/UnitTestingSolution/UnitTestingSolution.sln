@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalciLib", "CalciLib\CalciLib.csproj", "{DCFF0CF3-EB44-4996-9025-BD6EBD0B27D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalciLibTests", "CalciLibTests\CalciLibTests.csproj", "{2CCF67C1-94D3-423A-968F-DF502EF8411C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{946F44D8-A175-407C-90DB-7D477ECC1081}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCFF0CF3-EB44-4996-9025-BD6EBD0B27D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCFF0CF3-EB44-4996-9025-BD6EBD0B27D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCFF0CF3-EB44-4996-9025-BD6EBD0B27D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCFF0CF3-EB44-4996-9025-BD6EBD0B27D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CCF67C1-94D3-423A-968F-DF502EF8411C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CCF67C1-94D3-423A-968F-DF502EF8411C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CCF67C1-94D3-423A-968F-DF502EF8411C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CCF67C1-94D3-423A-968F-DF502EF8411C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{946F44D8-A175-407C-90DB-7D477ECC1081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{946F44D8-A175-407C-90DB-7D477ECC1081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{946F44D8-A175-407C-90DB-7D477ECC1081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{946F44D8-A175-407C-90DB-7D477ECC1081}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

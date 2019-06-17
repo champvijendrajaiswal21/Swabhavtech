@@ -5,20 +5,18 @@ using System.Text;
 
 namespace InventoryApp
 {
-    class Guitar
+   public class Instrument
     {
         private string _serialNumber;
         private double _price;
-        private GuitarSpec _spec;
-        // own 
+        private InstrumentSpec _spec;
 
-        public Guitar(string serialNumber, double price, GuitarSpec spec)
+        public Instrument(string serialNumber, double price, InstrumentSpec spec)
         {
             _serialNumber = serialNumber;
             _price = price;
             _spec = spec;
         }
-
         public string SerialNumber
         {
             get
@@ -39,7 +37,7 @@ namespace InventoryApp
             }
         }
 
-        public GuitarSpec Spec
+        public InstrumentSpec Spec
         {
             get
             {

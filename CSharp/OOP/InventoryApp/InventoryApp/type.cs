@@ -18,4 +18,12 @@ namespace InventoryApp
     {
         INDIAN_ROSEWOOD, BRAZILIAN_ROSEWOOD, MAHOGANY, MAPLE, COCOBOLO, CEDAR, ADIRONDACK, ALDER, SITKA
     }
+    enum Style
+    {
+        A, F
+    }
+    enum InstrumentType
+    {
+        GUITAR,BANJO,DOBRA,BASS,MANDOLIN,FIDDLE
+    }
 }

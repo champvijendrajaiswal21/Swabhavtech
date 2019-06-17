@@ -10,35 +10,43 @@ namespace InventoryApp
     {
         // need to add search 
         // see 32 page solution
-        private ArrayList _guitars;
+        private List<Instrument> instruments;
 
         public Inventory()
         {
-            _guitars = new ArrayList();
-
+            instruments = new List<Instrument>();
         }
 
-        public void AddGuitar(string serialNumber, double price, GuitarSpec spec)
+
+        public void AddInstrument(string serialNumber, double price, InstrumentSpec spec)                                            //Builder builder, string model, Type type, Wood backwood, Wood topwood)
         {
-            Guitar guitar = new Guitar(serialNumber, price, spec);
-            _guitars.Add(guitar);
+            Instrument instrument = new Instrument(serialNumber, price, spec);
+
+            instruments.Add(instrument);
         }
-        public ArrayList search(GuitarSpec searchspec)
+        public List<Instrument> Search(InstrumentSpec searchspec)
         {
-            ArrayList MatchingGuitar = new ArrayList();
-            foreach(Guitar git in _guitars)
+            List<Instrument> Matching = new List<Instrument>();
+           foreach(Instrument instrument in instruments)
             {
-                if(git.Spec.Matches(searchspec))
+               if( instrument.Spec.Matches(searchspec))
                 {
-                    MatchingGuitar.Add(git);
+                    Matching.Add(instrument);
                 }
-               
-                
-            }
-            return MatchingGuitar;
 
-            
+            }
+            return Matching;
+        }
+        public Instrument Get(string serialnumber)
+        {
+            foreach(Instrument instrument in instruments)
+            {
+                return instrument;
+            }
+            return null;
         }
 
     }
+
 }
+

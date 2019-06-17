@@ -42,8 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnumToString.cs" />
-    <Compile Include="Guitar.cs" />
-    <Compile Include="GuitarSpec.cs" />
+    <Compile Include="Instrument.cs" />
+    <Compile Include="InstrumentSpec.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
