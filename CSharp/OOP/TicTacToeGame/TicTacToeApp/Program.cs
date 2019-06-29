@@ -3,54 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TicTacToeLib;
-
+using System.Windows.Forms;
 namespace TicTacToeApp
 {
     class Program
     {
         static void Main(string[] args)
         {
-          
-
-                Board board = new Board();
-                ResultAnalyzer result = new ResultAnalyzer(board);
-                Player[] players = new Player[2];
-                players[0] = new Player("akash", Mark.O);
-                players[1] = new Player("dhruv", Mark.X);
-                Game game = new Game(players, board, result);
-
-                while (!board.IsBoardFull())
-                {
-                    int Position;
-                   
-                    Console.WriteLine(game.PlayerName+" : enter the position");
-                    Position = Convert.ToInt32(Console .ReadLine());
-                try
-                {
-
-
-                    game.Play(Position);
-            }
-                catch (Exception exception)
+            try
             {
-                Console.WriteLine(exception.Message);
-                continue;
-            }
-            Display(board);
-                    if (game.Status() == Result.WIN)
-                    {
-                        Console.WriteLine("Player " + game.PlayerNameWin + " wins..");
-                        break;
-                    }
-                    if (game.Status() == (Result.DRAW))
-                    {
-                        Console.WriteLine("The match is draw");
-                        break;
-                    }
-                    
-         
-
-                }
+                Application.EnableVisualStyles();
+                Application.Run(new TicTacToeForm());
+                //Case1();
 
                 //game.Play(0);
                 //Display(board);
@@ -64,12 +28,61 @@ namespace TicTacToeApp
                 //game.Play(2);
                 //Display(board);
 
-              //  Console.WriteLine("game status = " + game.Status() + " players = " + game.PlayerName);
+                //  Console.WriteLine("game status = " + game.Status() + " players = " + game.PlayerName);
 
-            
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+                
 
-           
+
         }
+
+        private static void Case1()
+        {
+            Board board = new Board();
+            ResultAnalyzer result = new ResultAnalyzer(board);
+            Player[] players = new Player[2];
+            players[0] = new Player("akash", Mark.O);
+            players[1] = new Player("dhruv", Mark.X);
+            Game game = new Game(players, board, result);
+
+            while (!board.IsBoardFull())
+            {
+                int Position;
+
+                Console.WriteLine(game.PlayerName + " : enter the position");
+                Position = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+
+
+                    game.Play(Position);
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                    continue;
+                }
+                Display(board);
+                if (game.Status() == Result.WIN)
+                {
+                    Console.WriteLine("Player " + game.PlayerNameWin + " wins..");
+                    break;
+                }
+                if (game.Status() == (Result.DRAW))
+                {
+                    Console.WriteLine("The match is draw");
+                    break;
+                }
+
+
+
+            }
+        }
+
         static void Display(Board board)
         {
             int count = 0;

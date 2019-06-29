@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountPubisherLib", "..\ObserverDesignPattern\AccountPubisherLib\AccountPubisherLib.csproj", "{6BB0416C-A8AF-43E1-91F8-4D909F1B1EF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountEventDelegatesApp", "AccountEventDelegatesApp\AccountEventDelegatesApp.csproj", "{1B0DBE54-6A0A-4759-A599-795C5335AF6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BB0416C-A8AF-43E1-91F8-4D909F1B1EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB0416C-A8AF-43E1-91F8-4D909F1B1EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB0416C-A8AF-43E1-91F8-4D909F1B1EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB0416C-A8AF-43E1-91F8-4D909F1B1EF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B0DBE54-6A0A-4759-A599-795C5335AF6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B0DBE54-6A0A-4759-A599-795C5335AF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B0DBE54-6A0A-4759-A599-795C5335AF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B0DBE54-6A0A-4759-A599-795C5335AF6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -46,26 +46,35 @@ namespace TicTacToeLib
         }
         public void Play(int position)
         {
+            
 
 
 
             if (switching == 0)
             {
 
-
+                Console.WriteLine(_players[switching].Name);
+                Console.WriteLine(_players[switching].MARk);
 
                 _board.SetPosition(position, _players[switching].MARk);
                 switching = 1;
                 _status = _resultanalyzer.resultGenerator();
                 return;
             }
-                    _board.SetPosition(position, _players[switching].MARk);
-                    switching = 0;
-                    _status = _resultanalyzer.resultGenerator();
-                }
-            
-           
+            _board.SetPosition(position, _players[switching].MARk);
+            switching = 0;
+            _status = _resultanalyzer.resultGenerator();
+        }
+        public int Switch
+        {
+            get
+            {
+                return switching;
+            }
         }
 
+
     }
+
+}
 
